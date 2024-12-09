@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!-- Campo para el Nombre -->
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
     <EditText
-        android:id="@+id/etName"
-        android:layout_width="0dp"
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="16dp"/>
-
-    <!-- add the rest of the fields -->
+        android:hint="Ingresa tu nombre"
+        android:layout_marginBottom="16dp" />
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa tu telefono"
+        android:layout_marginBottom="16dp" />
+    <CheckBox
+        android:id="@+id/cbAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Available"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/buttonFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filtrar activos"
+        android:layout_marginBottom="16dp" />
+    <TextView
+        android:id="@+id/textViewAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Add Contact"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_input_add"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
